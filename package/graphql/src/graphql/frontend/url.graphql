@@ -1,0 +1,13 @@
+query GetUrls {
+  urls {
+    id
+    url
+  }
+}
+
+mutation CreateUrl($url: String!) {
+  createUrl(url: $url) {
+    id
+    url
+  }
+}

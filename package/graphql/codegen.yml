@@ -1,0 +1,16 @@
+schema: './src/schema.ts'
+generates:
+  types.ts:
+    plugins:
+      - typescript
+  frontend.sdk.ts:
+    documents: 'src/graphql/frontend/**/*.graphql'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+require:
+  - "ts-node/register/transpile-only"
+hooks:
+  afterAllFileWrite:
+    - prettier --write

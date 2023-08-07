@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  max-width: 100%;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    max-width: 500px;
+    padding: 2rem;
+  }
+}
+
+.description {
+  display: grid;
+  grid-gap: 2rem;
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "url-shortening-app",
+  "version": "0.0.1",
+  "description": "A url shortening app",
+  "private": true,
+  "engines": {
+    "node": ">= 16"
+  },
+  "workspaces": {
+    "packages": [
+      "app/*",
+      "package/*"
+    ]
+  },
+  "scripts": {
+    "dev": "yarn workspace @app/frontend dev & yarn workspace @app/backend dev"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "dependencies": {}
+}
