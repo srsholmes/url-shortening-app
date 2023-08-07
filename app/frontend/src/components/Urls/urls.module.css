@@ -28,3 +28,22 @@
   font-size: 0.75rem;
   margin-top: 0.25rem;
 }
+
+.urlEntry {
+  border: 1px solid white;
+  padding: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.wrapLong {
+  overflow-wrap: break-word;
+  word-break: break-all;
+  margin-top: 1rem;
+}
+
+.large {
+  font-size: 1.3rem;
+}

@@ -1,13 +1,9 @@
 import styles from './page.module.css';
-import { getSdk } from '@package/graphql/frontend.sdk';
-import { GraphQLClient } from 'graphql-request';
 import { Urls } from '@/components/Urls/Urls';
 import { sdk } from '@/utils/sdk';
 
 export default async function Home() {
   const data = await getData();
-
-  console.log({ data });
   return (
     <main className={styles.main}>
       <div className={styles.description}>

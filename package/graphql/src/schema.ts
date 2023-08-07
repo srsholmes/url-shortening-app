@@ -12,5 +12,6 @@ export const schema = gql`
   type Url {
     id: String!
     url: String!
+    shortUrl: String!
   }
 `;

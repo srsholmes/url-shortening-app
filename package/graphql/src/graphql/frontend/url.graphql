@@ -2,6 +2,7 @@ query GetUrls {
   urls {
     id
     url
+    shortUrl
   }
 }
 
@@ -9,5 +10,6 @@ mutation CreateUrl($url: String!) {
   createUrl(url: $url) {
     id
     url
+    shortUrl
   }
 }

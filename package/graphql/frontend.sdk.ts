@@ -41,13 +41,13 @@ export type MutationCreateUrlArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  hello: Scalars['String']['output'];
   urls: Array<Url>;
 };
 
 export type Url = {
   __typename?: 'Url';
   id: Scalars['String']['output'];
+  shortUrl: Scalars['String']['output'];
   url: Scalars['String']['output'];
 };
 
@@ -55,7 +55,12 @@ export type GetUrlsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetUrlsQuery = {
   __typename?: 'Query';
-  urls: Array<{ __typename?: 'Url'; id: string; url: string }>;
+  urls: Array<{
+    __typename?: 'Url';
+    id: string;
+    url: string;
+    shortUrl: string;
+  }>;
 };
 
 export type CreateUrlMutationVariables = Exact<{
@@ -64,7 +69,7 @@ export type CreateUrlMutationVariables = Exact<{
 
 export type CreateUrlMutation = {
   __typename?: 'Mutation';
-  createUrl: { __typename?: 'Url'; id: string; url: string };
+  createUrl: { __typename?: 'Url'; id: string; url: string; shortUrl: string };
 };
 
 export const GetUrlsDocument = gql`
@@ -72,6 +77,7 @@ export const GetUrlsDocument = gql`
     urls {
       id
       url
+      shortUrl
     }
   }
 `;
@@ -80,6 +86,7 @@ export const CreateUrlDocument = gql`
     createUrl(url: $url) {
       id
       url
+      shortUrl
     }
   }
 `;

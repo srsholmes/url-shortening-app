@@ -38,12 +38,12 @@ export type MutationCreateUrlArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  hello: Scalars['String']['output'];
   urls: Array<Url>;
 };
 
 export type Url = {
   __typename?: 'Url';
   id: Scalars['String']['output'];
+  shortUrl: Scalars['String']['output'];
   url: Scalars['String']['output'];
 };
