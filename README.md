@@ -31,8 +31,9 @@ Types are share between the frontend and backend by using the `@graphql-codegen`
 ## Tests
 
 ### Backend
-Make sure the app is running (with docker as well) and then run
-`yarn workspace @app/backend test`
+ 1. Make sure the app is not running, as the tests will spin up the server
+ 2. docker-compose up to get the database running
+ 3. `yarn workspace @app/backend test`
 
 The backend is tested via integration tests using Vitest. The tests are located in the `test/integration` folder.
 
