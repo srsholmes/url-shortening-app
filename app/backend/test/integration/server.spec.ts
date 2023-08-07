@@ -9,7 +9,7 @@ import {
 
 describe('GraphqQL Server', () => {
   beforeEach(async () => {
-    // Clear the data const client = new MongoClient(MONGO_DB_URL, MONGO_DB_OPTIONS);
+    // Clear the data before each test
     const client = new MongoClient(MONGO_DB_URL, MONGO_DB_OPTIONS);
     await client.connect();
     const db = client.db(DATABASE_NAME);
@@ -58,21 +58,19 @@ describe('GraphqQL Server', () => {
     expect(json1.data.urls).toHaveLength(0);
 
     // Now create an entry
-    const createQuery = `
-      mutation CreateUrl($url: String!) {
-        createUrl(url: $url) {
-          id
-          url
-          shortUrl
-        }
-      }
-    `;
-
     await fetch('http://localhost:4000/graphql', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        query: createQuery,
+        query: `
+          mutation CreateUrl($url: String!) {
+            createUrl(url: $url) {
+              id
+              url
+              shortUrl
+            }
+          }
+      `,
         variables: { url: 'https://www.google.com' },
       }),
     });
