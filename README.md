@@ -54,3 +54,17 @@ Vitest uses the same API as jest and is a drop in replacement. Hopefully this is
 ### Docker
 
 I wasn't able to get the app to run using a single docker-compose command, unfortunately. I ran into dependency issues with different architecture between the docker image and my local machine. I tried to resolve it for a considerable time but was unable to in reasonable time. I feel confident that I would be able to solve the problem eventually, but didnt want to spend too much time on it.
+
+## Checklist
+- The specs for the application were:
+- A user needs to be able to enter a URL and they will get an 8 character (lowercase-alphanumeric) shortened version of the URL. ✅
+- URLs are shortened and persisted into MongoDB via a REST or GraphQL API. ✅
+- The frontend app will display a list of previously shortened URLs. ✅
+- New URLs will be generated and added to the frontend list. ✅
+- The same 8-characters cannot be used twice i.e. each shortened URL needs to be unique. ✅
+- The URLs need to be shortened with the following domain 'pbid.io' e.g. https://pbid.io/f3x2ab1c ✅
+- The shortened URL do not need to actually redirect/work as the domain doesn’t exist. ✅
+- The entire system needs to be runnable using Docker, a simple compose file will do.❕ (See notes above)
+- Appropriate tests should be added to the code, using the jest framework. ❕(See notes above)
+- The app layout should be responsive. ✅
+- Add a root README.md describing what the application is, and how to run it. ✅

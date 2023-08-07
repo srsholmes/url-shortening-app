@@ -9,8 +9,6 @@ generates:
       - typescript
       - typescript-operations
       - typescript-graphql-request
-require:
-  - "ts-node/register/transpile-only"
 hooks:
   afterAllFileWrite:
     - prettier --write
