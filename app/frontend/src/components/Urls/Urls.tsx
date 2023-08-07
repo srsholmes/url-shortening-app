@@ -4,6 +4,7 @@ import { Url } from '@package/graphql/types';
 import { useState } from 'react';
 import styles from './Urls.module.css';
 import { sdk } from '@/utils/sdk';
+import Link from 'next/link';
 
 export const Urls = (props: { urls: Url[] }) => {
   const [url, setUrl] = useState<string>('');
@@ -63,11 +64,19 @@ export const Urls = (props: { urls: Url[] }) => {
               >
                 <div>
                   <div className={styles.large}>Original url - </div>
-                  <span className={styles.wrapLong}>{url.url}</span>
+                  <Link
+                    target={'_blank'}
+                    href={url.url}
+                    className={styles.wrapLong}
+                  >
+                    {url.url}
+                  </Link>
                 </div>
                 <div>
                   <div className={styles.large}>Short url -</div>
-                  <span>{url.shortUrl}</span>
+                  <Link target={'_blank'} href={url.shortUrl}>
+                    {url.shortUrl}
+                  </Link>
                 </div>
               </li>
             ))}
