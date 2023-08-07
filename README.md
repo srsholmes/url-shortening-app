@@ -8,7 +8,7 @@ This is a simple url shortening app that allows users to shorten urls.
 
 1. Clone this repository
 2. Run `yarn` to install dependencies. You must use yarn as this project uses yarn workspaces.
-3. Run docker-compose up to start the database
+3. Run `docker-compose up` to start the database.
 4. In a separate terminal, run `yarn dev` to start the frontend and back end servers.
 5. Visit http://localhost:3000 to view the app.
 
@@ -32,7 +32,7 @@ Types are share between the frontend and backend by using the `@graphql-codegen`
 
 ### Backend
  1. Make sure the app is not running, as the tests will spin up the server
- 2. docker-compose up to get the database running
+ 2. `docker-compose up` to start the database.
  3. `yarn workspace @app/backend test`
 
 The backend is tested via integration tests using Vitest. The tests are located in the `test/integration` folder.
